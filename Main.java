@@ -49,7 +49,7 @@ public class Main {
         }
         while (ulang != 't');
 
-        System.out.println("Terimakasih...");
+        System.out.println("Terimakasih!");
     }
 
 
