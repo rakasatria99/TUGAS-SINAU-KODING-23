@@ -9,7 +9,7 @@ public class Main {
     }
 
     public static void mainMenu() {
-//        MUHAMMAD RAKA SATRIA
+        // MUHAMMAD RAKA SATRIA
         int menu;
         char ulang;
 
@@ -46,12 +46,10 @@ public class Main {
             ulang = input.next().charAt(0);
 
             System.out.println();
-        }
-        while (ulang != 't');
+        } while (ulang != 't');
 
         System.out.println("Terimakasih!");
     }
-
 
     public static void persegi() {
 
@@ -67,29 +65,33 @@ public class Main {
             menuPersegi = input.nextInt();
 
             if (menuPersegi == 1) {
-                System.out.print("Masukan sisi persegi: ");
-                double sisi = input.nextDouble();
-                System.out.print("Luas persegi adalah: " + luasPersegi(sisi));
-                System.out.println("\n\n");
+                menghitungLuasPersegi();
             } else if (menuPersegi == 2) {
-                System.out.print("Masukan sisi persegi : ");
-                double sisi = input.nextDouble();
-                System.out.print("Keliling persegi adalah : " + kelilingPersegi(sisi));
-                System.out.println("\n\n");
+                menghitungKelilingPersegi();
             } else if (menuPersegi == 3) {
                 mainMenu();
-
             }
         }
-
     }
 
-    public static double luasPersegi(double s) {
-        return s * s;
+    static void menghitungLuasPersegi() {
+        System.out.print("\nMasukan sisi : ");
+        double sisi = input.nextDouble();
+
+        Persegi persegi = new Persegi();
+        double luas = persegi.luasPersegi(sisi);
+
+        System.out.println("Luas persegi dengan sisi " + sisi + " adalah " + luas);
     }
 
-    public static double kelilingPersegi(double s) {
-        return 4 * s;
+    static void menghitungKelilingPersegi() {
+        System.out.print("Masukan sisi : ");
+        double sisi = input.nextDouble();
+
+        Persegi persegi = new Persegi();
+        double luas = persegi.kelilingPersegi(sisi);
+
+        System.out.println("Keliling persegi dengan sisi " + sisi + " adalah " + luas);
     }
 
     public static void persegiPanjang() {
@@ -106,31 +108,37 @@ public class Main {
             menuPersegiPanjang = input.nextInt();
 
             if (menuPersegiPanjang == 1) {
-                System.out.print("Masukan panjang : ");
-                double s1 = input.nextDouble();
-                System.out.print("Masukan lebar : ");
-                double s2 = input.nextDouble();
-                System.out.print("Luas persegi panjang adalah : " + luasPersegiPanjang(s1, s2));
-                System.out.println("\n\n");
+                menghitungLuasPersegiPanjang();
             } else if (menuPersegiPanjang == 2) {
-                System.out.print("Masukan panjang : ");
-                double s1 = input.nextDouble();
-                System.out.print("Masukan lebar : ");
-                double s2 = input.nextDouble();
-                System.out.print("Keliling persegi panjang adalah : " + kelilingPersegiPanjang(s1, s2));
-                System.out.println("\n\n");
+                menghitungKelilingPersegiPanjang();
             } else if (menuPersegiPanjang == 3) {
                 mainMenu();
             }
         }
     }
 
-    public static double luasPersegiPanjang(double s1, double s2) {
-        return (s1 * s2);
+    static void menghitungLuasPersegiPanjang() {
+        System.out.print("\nMasukan Panjang : ");
+        double s1 = input.nextDouble();
+        System.out.print("\nMasukan Lebar: ");
+        double s2 = input.nextDouble();
+
+        PersegiPanjang persegipanjang = new PersegiPanjang();
+        double luas = persegipanjang.luasPersegiPanjang(s1, s2);
+
+        System.out.println("Luas persegi panjang adalah " + luas);
     }
 
-    public static double kelilingPersegiPanjang(double s1, double s2) {
-        return (2 * (s1 + s2));
+    static void menghitungKelilingPersegiPanjang() {
+        System.out.print("\nMasukan Panjang : ");
+        double s1 = input.nextDouble();
+        System.out.print("\nMasukan Lebar: ");
+        double s2 = input.nextDouble();
+
+        PersegiPanjang persegipanjang = new PersegiPanjang();
+        double kel = persegipanjang.kelilingPersegiPanjang(s1, s2);
+
+        System.out.println("Keliling persegi panjang adalah " + kel);
     }
 
     public static void segitiga() {
@@ -146,33 +154,39 @@ public class Main {
             menuSegitiga = input.nextInt();
 
             if (menuSegitiga == 1) {
-                System.out.print("Masukan alas : ");
-                double s1 = input.nextDouble();
-                System.out.print("Masukan tinggi : ");
-                double s2 = input.nextDouble();
-                System.out.print("Luas segitiga adalah : " + luasSegitiga(s1, s2));
-                System.out.println("\n\n");
+                menghitungLuasSegitiga();
             } else if (menuSegitiga == 2) {
-                System.out.print("Masukan alas : ");
-                double s1 = input.nextDouble();
-                System.out.print("Masukan tinggi : ");
-                double s2 = input.nextDouble();
-                System.out.print("Masukan sisi miring : ");
-                double s3 = input.nextDouble();
-                System.out.print("Keliling segitiga adalah : " + kelilingSegitiga(s1, s2, s3));
-                System.out.println("\n\n");
+                menghitungKelilingSegitiga();
             } else if (menuSegitiga == 3) {
                 mainMenu();
             }
         }
     }
 
-    public static double luasSegitiga(double s1, double s2) {
-        return (0.5 * s1 * s2);
+    static void menghitungLuasSegitiga() {
+        System.out.print("\nMasukan Alas: ");
+        double s1 = input.nextDouble();
+        System.out.print("\nMasukan Tinggi: ");
+        double s2 = input.nextDouble();
+
+        Segitiga segitiga = new Segitiga();
+        double luas = segitiga.luasSegitiga(s1, s2);
+
+        System.out.println("Luas segitiga adalah " + luas);
     }
 
-    public static double kelilingSegitiga(double s1, double s2, double s3) {
-        return (s1 + s2 + s3);
+    static void menghitungKelilingSegitiga() {
+        System.out.print("\nMasukan Alas: ");
+        double s1 = input.nextDouble();
+        System.out.print("\nMasukan Tinggi: ");
+        double s2 = input.nextDouble();
+        System.out.print("\nMasukan Sisi Miring: ");
+        double s3 = input.nextDouble();
+
+        Segitiga segitiga = new Segitiga();
+        double kel = segitiga.kelilingSegitiga(s1, s2, s3);
+
+        System.out.println("Keliling segitiga adalah " + kel);
     }
 
     public static void lingkaran() {
@@ -188,29 +202,35 @@ public class Main {
             menuLingkaran = input.nextInt();
 
             if (menuLingkaran == 1) {
-                System.out.print("Masukan jari-jari : ");
-                double r = input.nextDouble();
-                double pi = 3.14;
-                System.out.print("Luas lingkaran adalah : " + luasLingkaran(r, pi));
-                System.out.println("\n\n");
+                menghitungLuasLingkaran();
             } else if (menuLingkaran == 2) {
-                System.out.print("Masukan jari-jari : ");
-                double r = input.nextDouble();
-                double pi = 3.14;
-                System.out.print("Keliling lingkaran adalah : " + kelilingLingkaran(r, pi));
-                System.out.println("\n\n");
+                menghitungKelilingLingkaran();
             } else if (menuLingkaran == 3) {
                 mainMenu();
             }
         }
     }
 
-    public static double luasLingkaran(double r, double pi) {
-        return (pi * r * r);
+    static void menghitungLuasLingkaran() {
+        System.out.print("\nMasukan Jari-Jari: ");
+        double r = input.nextDouble();
+        double phi = 3.14;
+
+        Lingkaran lingkaran = new Lingkaran();
+        double luas = lingkaran.luasLingkaran(r, phi);
+
+        System.out.println("Luas lingkaran adalah " + luas);
     }
 
-    public static double kelilingLingkaran(double r, double pi) {
-        return (2 * pi * r);
+    static void menghitungKelilingLingkaran() {
+        System.out.print("\nMasukan Jari-Jari: ");
+        double r = input.nextDouble();
+        double phi = 3.14;
+
+        Lingkaran lingkaran = new Lingkaran();
+        double kel = lingkaran.kelilingLingkaran(r, phi);
+
+        System.out.println("Keliling lingkaran adalah " + kel);
     }
 
     public static void jajarGenjang() {
@@ -226,31 +246,37 @@ public class Main {
             menujajarGenjang = input.nextInt();
 
             if (menujajarGenjang == 1) {
-                System.out.print("Masukan alas : ");
-                double s1 = input.nextDouble();
-                System.out.print("Masukan alas : ");
-                double s2 = input.nextDouble();
-                System.out.print("Luas Jajar Genjang adalah : " + luasJajarGenjang(s1, s2));
-                System.out.println("\n\n");
+                menghitungLuasjajarGenjang();
             } else if (menujajarGenjang == 2) {
-                System.out.print("Masukan alas : ");
-                double s1 = input.nextDouble();
-                System.out.print("Masukan sisi miring : ");
-                double s2 = input.nextDouble();
-                System.out.print("Keliling Jajar Genjang adalah : " + kelilingJajarGenjang(s1, s2));
-                System.out.println("\n\n");
+                menghitungKelilingjajarGenjang();
             } else if (menujajarGenjang == 3) {
                 mainMenu();
             }
         }
     }
 
-    public static double luasJajarGenjang(double s1, double s2) {
-        return (s1 * s2);
+    static void menghitungLuasjajarGenjang() {
+        System.out.print("Masukan alas 1 : ");
+        double s1 = input.nextDouble();
+        System.out.print("Masukan alas 2 : ");
+        double s2 = input.nextDouble();
+
+        JajarGenjang jajargenjang = new JajarGenjang();
+        double luas = jajargenjang.luasJajarGenjang(s1, s2);
+
+        System.out.println("Luas jajar genjang adalah " + luas);
     }
 
-    public static double kelilingJajarGenjang(double s1, double s2) {
-        return (2 * (s1 + s2));
+    static void menghitungKelilingjajarGenjang() {
+        System.out.print("Masukan alas : ");
+        double s1 = input.nextDouble();
+        System.out.print("Masukan sisi miring : ");
+        double s2 = input.nextDouble();
+
+        JajarGenjang jajargenjang = new JajarGenjang();
+        double kel = jajargenjang.kelilingJajarGenjang(s1, s2);
+
+        System.out.println("Keliling jajar genjang adalah " + kel);
+
     }
 }
-
